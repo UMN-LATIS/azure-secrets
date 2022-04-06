@@ -1,0 +1,19 @@
+---
+- name: Get Valid oauth token
+  delegate_to: localhost
+  uri:
+    url: "https://login.microsoftonline.com/c7e9abb7-1aa0-47d4-9ff4-49c649b768fd/oauth2/token"
+    body_format: form-urlencoded
+    method: "POST"
+    headers:
+      Content-Type: application/x-www-form-urlencoded      
+    body: "grant_type=client_credentials&client_id={{ client_id }}&client_secret={{ client_secret | urlencode }}&resource=https%3a%2f%2fvault.azure.net"
+    return_content: yes
+  register: auth_data
+
+- name: Set Azure Access Token
+  set_fact: az_access_token="{{ auth_data.json | json_query('access_token')}}"
+
+- name: get secret {{item}}
+  include: getsecret.yml
+  with_items: "{{secrets}}"

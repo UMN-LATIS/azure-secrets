@@ -1,0 +1,10 @@
+---
+client_id: "your-sp-app-id"
+client_secret: "your-sp-password"
+vaultURL: "your-vault-url.vault.azure.net"
+secrets:
+  - list
+  - of
+  - secrets
+  - you
+  - want
