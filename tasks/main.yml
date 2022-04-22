@@ -1,6 +1,6 @@
 ---
 - name: Get Valid oauth token
-  # delegate_to: localhost
+  delegate_to: localhost
   uri:
     url: "https://login.microsoftonline.com/c7e9abb7-1aa0-47d4-9ff4-49c649b768fd/oauth2/token"
     body_format: form-urlencoded
