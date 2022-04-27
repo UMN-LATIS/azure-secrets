@@ -11,9 +11,9 @@ Role Variables
 The "secrets" array contains the list of secrets you want to fetch from Azure Keyvault. 
 
 ```
-client_id: "your-sp-app-id"
-client_secret: "your-sp-password"
-vaultURL: "your-vault-url.vault.azure.net"
+azure_sp_client_id: "your-sp-app-id"
+azure_sp_client_secret: "your-sp-password"
+azure_akv_vault_url: "your-vault-url.vault.azure.net"
 secrets:
   - list
   - of
@@ -31,9 +31,9 @@ Example Playbook
 - hosts: localhost
   gather_facts: no
   vars:
-    client_id: "ID"
-    client_secret: "SECRET"
-    vaultURL: "latis-camino.vault.azure.net"
+    azure_sp_client_id: "ID"
+    azure_sp_client_secret: "SECRET"
+    azure_akv_vault_url: "latis-camino.vault.azure.net"
     secrets:
     - "db-dev"
   tasks:

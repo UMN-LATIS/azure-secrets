@@ -7,7 +7,7 @@
     method: "POST"
     headers:
       Content-Type: application/x-www-form-urlencoded      
-    body: "grant_type=client_credentials&client_id={{ client_id }}&client_secret={{ client_secret | urlencode }}&resource=https%3a%2f%2fvault.azure.net"
+    body: "grant_type=client_credentials&client_id={{ azure_sp_client_id }}&client_secret={{ azure_sp_client_secret | urlencode }}&resource=https%3a%2f%2fvault.azure.net"
     return_content: yes
   register: auth_data
 

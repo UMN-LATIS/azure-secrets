@@ -1,7 +1,7 @@
 ---
-client_id: "your-sp-app-id"
-client_secret: "your-sp-password"
-vaultURL: "your-vault-url.vault.azure.net"
+azure_sp_client_id: "your-sp-app-id"
+azure_sp_client_secret: "your-sp-password"
+azure_akv_vault_url: "your-vault-url.vault.azure.net"
 secrets:
   - list
   - of
